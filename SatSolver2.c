@@ -205,8 +205,8 @@ int main(int argc, char *argv[]) {
     }
 
     Formula F;
-    int V, K;
-    graph_to_cnf(argv[1], &F, &V, &K);
+    int Vertice, cor;
+    graph_to_cnf(argv[1], &F, &Vertice, &cor);
 
     AssignNode *root = create_node(0, 0, NULL);
     AssignNode *solution_node = NULL;
@@ -215,7 +215,7 @@ int main(int argc, char *argv[]) {
 
     if (satisfiable && solution_node != NULL) {
         printf("SAT!\n");
-        print_coloring(solution_node, V, K);
+        print_coloring(solution_node, Vertice, cor);
     } else {
         printf("UNSAT!\n");
     }
